@@ -550,83 +550,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#three-different-approaches-for-multimodal-rag" class="md-nav__link">
-    Three Different approaches for Multimodal RAG
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contrastive-language-image-pretraining-clip-model" class="md-nav__link">
-    Contrastive Language-Image Pretraining - CLIP Model
-  </a>
-  
-    <nav class="md-nav" aria-label="Contrastive Language-Image Pretraining - CLIP Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#zero-shot-learning-zsl" class="md-nav__link">
-    Zero-Shot Learning (ZSL)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#openclip-model" class="md-nav__link">
-    OpenCLIP Model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-multimodal-rag" class="md-nav__link">
-    Deploy Multimodal RAG
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#task-1-log-into-the-lab-environment" class="md-nav__link">
-    Task 1: Log into the Lab Environment
-  </a>
-  
-    <nav class="md-nav" aria-label="Task 1: Log into the Lab Environment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#set-openai-token-multimodal" class="md-nav__link">
     Set OpenAI token - MultiModal
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#update-google-colab-envoirnment-and-install-packages" class="md-nav__link">
     Update Google Colab envoirnment and install packages
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#pdf-with-table" class="md-nav__link">
     PDF with table
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#lets-now-create-summary-from-our-data-by-passing-the-info-to-multimodal-model" class="md-nav__link">
     Let's now create summary from our data by passing the info to Multimodal model
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#lets-now-create-our-multivector-retriever-and-rag-system-incl-storing-summary-embeddings-in-vector-db" class="md-nav__link">
     Let's now create our MultiVector Retriever and RAG system - incl storing summary embeddings in Vector DB
   </a>
@@ -652,16 +603,11 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#lets-query-our-multimodal-retriever" class="md-nav__link">
     Let's Query our Multimodal Retriever
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -877,39 +823,70 @@
 
 
 <h1 id="multimodal-rag">Multimodal RAG</h1>
+<details class="blank" open="open">
+<summary>Multimodal RAG</summary>
+<details class="info">
+<summary>Introduction</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Introduction</label><label for="__tabbed_1_2">Three Different approaches for Multimodal RAG</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>In the previous section, we explored RAG systems primarily designed for handling text. However, in real-world scenarios, many documents within organizations contain valuable information in the form of images, tables, and other non-text elements. </p>
 <p>When building a robust RAG system, it's crucial to have the capability to retrieve not just text-based information but also relevant images and other visual data. This multimodal approach significantly enhances the effectiveness of information retrieval. In this section, we will explore methods to retrieve both images and text in response to user queries, enabling a more comprehensive and efficient RAG based system.</p>
-<h2 id="three-different-approaches-for-multimodal-rag">Three Different approaches for Multimodal RAG</h2>
+</div>
+<div class="tabbed-block">
 <p><a class="glightbox" href="../assets/task6/1.png" data-type="image" data-width="100%" data-height="auto" data-title="C1" data-desc-position="top"><img alt="C1" src="../assets/task6/1.png" /></a></p>
 <p><a class="glightbox" href="../assets/task6/2.png" data-type="image" data-width="100%" data-height="auto" data-title="C2" data-desc-position="top"><img alt="C2" src="../assets/task6/2.png" /></a></p>
 <p><a class="glightbox" href="../assets/task6/3.png" data-type="image" data-width="100%" data-height="auto" data-title="C3" data-desc-position="top"><img alt="C3" src="../assets/task6/3.png" /></a></p>
-<p><span class="colour" style="color:orange"> We will be using Option 2 for our lab </span></p>
-<p><span class="colour" style="color:orange">Embedding for images can be done via CLIP model.</span></p>
-<h2 id="contrastive-language-image-pretraining-clip-model">Contrastive Language-Image Pretraining - CLIP Model</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will be using Option 2 for our lab.</p>
+<p>Embedding for images can be done via CLIP model.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Contrastive Language-Image Pretraining - CLIP Model</label><label for="__tabbed_2_2">Zero-Shot Learning (ZSL)</label><label for="__tabbed_2_3">OpenCLIP Model</label><label for="__tabbed_2_4">Different types of Multimodal Embeddings and LLM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Unlike other embedding models that focus on a single modality, such as text or images, the <a href="https://openai.com/index/clip/" target="_blank">CLIP (Contrastive Language-Image Pretraining)</a>  was developed by OpenAI in 2021, handles multiple modalities by integrating both text and images.</p>
-<p><span class="colour" style="color:red">Note: CLIP models are embedding models, not traditional Large Language Models (LLMs).</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>CLIP models are embedding models, not traditional Large Language Models (LLMs).</p>
+</div>
 <p>The primary function of CLIP (Contrastive Language-Image Pretraining) is to create a shared embedding space where both text and images are represented as vectors. The key idea is to learn representations where images and their corresponding text descriptions are close to each other in this embedding space, while unrelated image-text pairs are far apart. This allows CLIP to perform tasks like image classification, zero-shot learning, and text-to-image retrieval based on the semantic similarity between text and images. So in summary CLIP models create a relationship between images and text.</p>
-<h3 id="zero-shot-learning-zsl">Zero-Shot Learning (ZSL)</h3>
+</div>
+<div class="tabbed-block">
 <p>Zero-Shot Learning (ZSL): This technique enhances the ability of AI systems to classify and recognize objects they have not been explicitly trained on. Instead of relying solely on trained data, ZSL uses auxiliary information to make predictions. For example, in an image classification scenario where a model is trained to recognize dogs and cats, if it encounters an image of a zebra (which the model has never seen before), it can still classify it correctly if it has auxiliary information describing a zebra as an animal with black and white stripes.</p>
 <p>Using ZSL, CLIP models can perform tasks they were not specifically trained on, in real-time. Essentially, they have capabilities similar to text-based embedding models. Just as we create chunks of text and use a user query to find similar text chunks, the same concept applies to images using CLIP.</p>
-<h2 id="openclip-model">OpenCLIP Model</h2>
+</div>
+<div class="tabbed-block">
 <p>It's important to note that the original CLIP model by OpenAI is not publicly available. However, people have taken the concepts from OpenAI's CLIP paper and developed open-source models like OpenCLIP.</p>
-<p><span class="colour" style="color:red"> Note: <a href="https://github.com/mlfoundations/open_clip" target="_blank">OpenCLIP</a> is an open-source implementation and extension of the original CLIP (Contrastive Language-Image Pretraining) model developed by OpenAI.</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a href="https://github.com/mlfoundations/open_clip" target="_blank">OpenCLIP</a> is an open-source implementation and extension of the original CLIP (Contrastive Language-Image Pretraining) model developed by OpenAI.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../assets/task6/4.png" data-type="image" data-width="100%" data-height="auto" data-title="C4" data-desc-position="top"><img alt="C4" src="../assets/task6/4.png" /></a></p>
 <ul>
-<li>
-<p><strong>Different types of Multimodal Embeddings and LLM</strong>
-<a class="glightbox" href="../assets/task6/4.png" data-type="image" data-width="100%" data-height="auto" data-title="C4" data-desc-position="top"><img alt="C4" src="../assets/task6/4.png" /></a></p>
-</li>
-<li>
-<p><strong>Usecases for Multimodal RAG</strong></p>
-</li>
+<li><strong>Usecases for Multimodal RAG</strong></li>
 </ul>
 <p><a class="glightbox" href="../assets/task6/5.png" data-type="image" data-width="100%" data-height="auto" data-title="C5" data-desc-position="top"><img alt="C5" src="../assets/task6/5.png" /></a></p>
 <p>Let’s continue by jumping over to our lab environment!</p>
-<h2 id="deploy-multimodal-rag">Deploy Multimodal RAG</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details>
+<details class="info">
+<summary>Multimodal RAG</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Deploy Multimodal RAG</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Whenever we develop applications based on Large Language Models (LLMs), handling data is a crucial aspect. As discussed in the previous section (RAG), data injection is the initial step in this process. It's important to note that there are typically three types of data structure.</p>
 <p><a class="glightbox" href="../assets/task6/6.png" data-type="image" data-width="100%" data-height="auto" data-title="C6" data-desc-position="top"><img alt="C6" src="../assets/task6/6.png" /></a></p>
-<h2 id="task-1-log-into-the-lab-environment">Task 1: Log into the Lab Environment</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Task 1: Log into the Lab Environment</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p><a class="glightbox" href="../assets/task1/warn.png" data-type="image" data-width="100%" data-height="auto" data-title="Warn" data-desc-position="top"><img alt="Warn" src="../assets/task1/warn.png" /></a></p>
 <ul>
 <li>Open Google Colab and create a new notebook. Click on "File" &gt; "New notebook". Please refer to the <a href="../Task1/">following section</a> to create Google Colab account.</li>
@@ -931,12 +908,21 @@
 <ul>
 <li>Save Settings: Click “Save” to apply the changes.</li>
 </ul>
-<p><span class="colour" style="color:red">Reminder: </span>Whenever you want to copy the code in Google Colab and run it, be sure to click on + Code to add a new code cell.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Whenever you want to copy the code in Google Colab and run it, be sure to click on + Code to add a new code cell.</p>
+</div>
 <p><a class="glightbox" href="../assets/task8/newcell.png" data-type="image" data-width="100%" data-height="auto" data-title="Colab_newcell" data-desc-position="top"><img alt="Colab_newcell" src="../assets/task8/newcell.png" /></a></p>
-<p><span class="colour" style="color:red">Reminder: </span>Click the play button to the left of the code, or use the keyboard shortcut "Command/Ctrl+Enter" while the cell is selected.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Click the play button to the left of the code, or use the keyboard shortcut "Command/Ctrl+Enter" while the cell is selected.</p>
+</div>
 <p><a class="glightbox" href="../assets/task8/exec.png" data-type="image" data-width="100%" data-height="auto" data-title="Colab_newcell_execute" data-desc-position="top"><img alt="Colab_newcell_execute" src="../assets/task8/exec.png" /></a></p>
 <h3 id="set-openai-token-multimodal">Set OpenAI token - MultiModal</h3>
-<p><span class="colour" style="color:red">Note: First, create an account from the <a href="https://platform.openai.com/">OpenAI official website</a>.If you have already completed this step please ignore and jump to Update Google Colab envoirnment section.</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>First, create an account from the <a href="https://platform.openai.com/">OpenAI official website</a>.If you have already completed this step please ignore and jump to Update Google Colab envoirnment section.</p>
+</div>
 <ul>
 <li>Create a new project API key by browsing to <a href="https://platform.openai.com/api-keys">API Keys web page</a>. Select Create new secret key. The API key is automatically generated. Save the APi Key as we will be using it in the later steps .</li>
 </ul>
@@ -957,6 +943,14 @@
 </li>
 </ul>
 <p><a class="glightbox" href="../assets/task8c/kei.png" data-type="image" data-width="100%" data-height="auto" data-title="HF_GT_sec_created_8c" data-desc-position="top"><img alt="HF_GT_sec_created_8c" src="../assets/task8c/kei.png" /></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details>
+</details>
 <h3 id="update-google-colab-envoirnment-and-install-packages">Update Google Colab envoirnment and install packages</h3>
 <p><span class="colour" style="color:red"> NOTE: To avoid errors, overlap, or dependencies from previous tasks, open a new Google Colab notebook for this step. This will ensure a clean environment and prevent any potential issues related to previous work. </span></p>
 <p>PDFs often contain tables and other structured data that can be challenging to split accurately using character-based embedding techniques. For PDFs, it's important to extract and chunk all elements, including tables, effectively. We'll accomplish this using the <a href="https://unstructured.io/" target="_blank">Unstructured</a>, which is specifically designed for handling such tasks. If you have a large collection of PDFs, <a href="https://unstructured.io/" target="_blank">Unstructured</a> is an excellent tool to manage them efficiently.</p>
