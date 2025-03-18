@@ -473,17 +473,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Task 4  - Embeddings and Vector Database
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -493,100 +482,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-are-embeddings" class="md-nav__link">
-    What are embeddings?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-use-vector-databases-when-we-have-relational-databases" class="md-nav__link">
-    Why use vector databases when we have relational databases?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-the-workings-of-embeddings-and-vector-databases" class="md-nav__link">
-    Understanding the workings of Embeddings and Vector Databases
-  </a>
-  
-    <nav class="md-nav" aria-label="Understanding the workings of Embeddings and Vector Databases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#practical-example-of-embedding-techniques-using-postman" class="md-nav__link">
-    Practical Example of Embedding Techniques Using Postman
-  </a>
-  
-    <nav class="md-nav" aria-label="Practical Example of Embedding Techniques Using Postman">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#set-openai-token" class="md-nav__link">
-    Set OpenAI token
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#login-to-postman" class="md-nav__link">
-    Login to Postman
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inserting-values-in-vector-database" class="md-nav__link">
-    Inserting values in Vector Database
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#retrieving-values-from-the-vector-database" class="md-nav__link">
-    Retrieving Values from the Vector Database
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -836,6 +731,13 @@
 
 
 <h1 id="task-4-embeddings-and-vector-database">Task 4: Embeddings and Vector Database</h1>
+<details class="blank" open="open">
+<summary>Embeddings</summary>
+<details class="info">
+<summary>Introduction</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Introduction</label><label for="__tabbed_1_2">What are embeddings?</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <ul>
 <li>Vector databases are specialized databases designed to store content like PDFs, blogs, Word documents, images, audio files, and videos as embedding vectors. This enables semantic-based retrieval, meaning the database can understand the meaning and context of the stored data, allowing for more accurate and relevant search results beyond simple keyword matching.</li>
 </ul>
@@ -844,7 +746,8 @@
 <li>In the process of a large language model, embedding is generally the first step to convert discrete tokens (like words or subwords) into dense vector representations, which will allow the rest of the network to do the math necessary to predict the next word.Embeddings and vector databases are essential if you are building any kind of AI product.</li>
 </ul>
 <p><a class="glightbox" href="../assets/task4/ev.png" data-type="image" data-width="100%" data-height="auto" data-title="EV" data-desc-position="top"><img alt="EV" src="../assets/task4/ev.png" /></a></p>
-<h2 id="what-are-embeddings">What are embeddings?</h2>
+</div>
+<div class="tabbed-block">
 <p>Embeddings are basically data which are converted into array of numbers called vectors that contain pattern of relationship, and can be used for similarity search.</p>
 <p><a class="glightbox" href="../assets/task4/emb1.png" data-type="image" data-width="100%" data-height="auto" data-title="Emb1" data-desc-position="top"><img alt="Emb1" src="../assets/task4/emb1.png" /></a></p>
 <p><a class="glightbox" href="../assets/task4/emb2.png" data-type="image" data-width="100%" data-height="auto" data-title="Emb2" data-desc-position="top"><img alt="Emb2" src="../assets/task4/emb2.png" /></a></p>
@@ -855,13 +758,37 @@
 <p>Similarly, images are also broken into vectors, which are arrays of numbers that machines can process. Once these embeddings (both for words and images) are generated, they are stored in a specialized database known as a vector database.</p>
 <p><a class="glightbox" href="../assets/task4/emb4.png" data-type="image" data-width="100%" data-height="auto" data-title="Emb4" data-desc-position="top"><img alt="Emb4" src="../assets/task4/emb4.png" /></a></p>
 <p>There are numerous embedding models available, such as Google's Word2Vec, CLIP (Contrastive Language–Image Pretraining), and even those provided by OpenAI, which offer excellent capabilities for generating embeddings. However, the challenge is that these models don't include tools for storing and managing those embeddings. This is where vector databases become essential.</p>
-<p><span class="colour" style="color:red"> Note: In this lab session, we will be using OpenAI embeddings. More info can be found <a href="https://platform.openai.com/docs/guides/embeddings">here</a></span> </p>
-<h2 id="why-use-vector-databases-when-we-have-relational-databases">Why use vector databases when we have relational databases?</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this lab session, we will be using OpenAI embeddings. More info can be found <a href="https://platform.openai.com/docs/guides/embeddings">here</a></p>
+</div>
+</div>
+</div>
+</div>
+</details>
+</details>
+<details class="blank" open="open">
+<summary>Vector Databases</summary>
+<details class="info">
+<summary>Introduction</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Why use vector databases when we have relational databases?</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Around 80% of the data we encounter is unstructured, including social media posts, images, and videos. This type of data doesn’t easily fit into traditional relational databases, which is where vector databases come into play.</p>
 <p><a class="glightbox" href="../assets/task4/vdb.png" data-type="image" data-width="100%" data-height="auto" data-title="VecDB" data-desc-position="top"><img alt="VecDB" src="../assets/task4/vdb.png" /></a></p>
 <p><a class="glightbox" href="../assets/task4/ex_vdb.png" data-type="image" data-width="100%" data-height="auto" data-title="VecDB1" data-desc-position="top"><img alt="VecDB1" src="../assets/task4/ex_vdb.png" /></a></p>
-<h2 id="understanding-the-workings-of-embeddings-and-vector-databases">Understanding the workings of Embeddings and Vector Databases</h2>
-<h3 id="practical-example-of-embedding-techniques-using-postman">Practical Example of Embedding Techniques Using Postman</h3>
+</div>
+</div>
+</div>
+</details>
+</details>
+<details class="blank" open="open">
+<summary>Understanding the workings of Embeddings and Vector Databases</summary>
+<details class="info">
+<summary>Introduction</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Practical Example of Embedding Techniques Using Postman</label><label for="__tabbed_3_2">LAB</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p><a class="glightbox" href="../assets/task4/HLO.png" data-type="image" data-width="100%" data-height="auto" data-title="SingleStore" data-desc-position="top"><img alt="SingleStore" src="../assets/task4/HLO.png" /></a></p>
 <p>The above image illustrates a high-level overview of how embeddings and vector databases will work together:</p>
 <ul>
@@ -878,18 +805,39 @@
 <p>Vector Database (Vector DB): The generated embeddings are stored in a vector database(e.g Singlestore). This database is optimized for searching and retrieving embeddings quickly, enabling faster queries when comparing vectors to find similar items.</p>
 </li>
 </ul>
-<p><span class="colour" style="color:red">Note: There are many vector databases, such as Chroma, Faiss, Pinecone e.t.c. However, we are using SingleStore for its ease of use and to help you better understand how embeddings are created.</span></p>
-<h4 id="set-openai-token">Set OpenAI token</h4>
-<p><span class="colour" style="color:red">Note: If you’ve already obtained the token in previous steps or section, you can skip this section </span></p>
-<p><span class="colour" style="color:red">Note: First, create an account from the <a href="https://platform.openai.com/" target="_blank">OpenAI official website</a>.</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are many vector databases, such as Chroma, Faiss, Pinecone e.t.c. However, we are using SingleStore for its ease of use and to help you better understand how embeddings are created.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="4:5"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><input id="__tabbed_4_5" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Set OpenAI token</label><label for="__tabbed_4_2">Login to Postman</label><label for="__tabbed_4_3">Inserting values in Vector Database</label><label for="__tabbed_4_4">Retrieving Values from the Vector Database</label><label for="__tabbed_4_5">Conclusion</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’ve already obtained the token in previous steps or section, you can skip this section</p>
+</div>
 <ul>
-<li>Create a new project API key by browsing to <a href="https://platform.openai.com/api-keys" target="_blank">API Keys web page</a>. Select Create new secret key. The API key is automatically generated. Save the APi Key as we will be using it in the later steps .</li>
+<li>
+<p>First, create an account from the <a href="https://platform.openai.com/" target="_blank">OpenAI official website</a>.</p>
+</li>
+<li>
+<p>Create a new project API key by browsing to <a href="https://platform.openai.com/api-keys" target="_blank">API Keys web page</a>. Select Create new secret key. The API key is automatically generated. Save the APi Key as we will be using it in the later steps .</p>
+</li>
 </ul>
 <p><a class="glightbox" href="../assets/task8c/ap.png" data-type="image" data-width="100%" data-height="auto" data-title="GPT1_apiKey" data-desc-position="top"><img alt="GPT1_apiKey" src="../assets/task8c/ap.png" /></a></p>
-<p><span class="colour" style="color:red">Note: We will use the OpenAI key in Postman to generate embeddings.</span></p>
-<h4 id="login-to-postman">Login to Postman</h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will use the OpenAI key in Postman to generate embeddings.</p>
+</div>
+</div>
+<div class="tabbed-block">
 <p>If you haven't installed Postman on your machine yet, you can download it from the following <a href="https://www.postman.com/downloads/" target="_blank">link</a></p>
-<p><span class="colour" style="color:red">Note:If you are using the provided machines, Postman will already be pre-installed.</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using the provided machines, Postman will already be pre-installed.</p>
+</div>
 <p>We will use embedding APIs to create an embedding vector that represents our input text, more information about OPENAI embeddings can be found at the following <a href="https://platform.openai.com/docs/api-reference/embeddings" target="_blank">link</a></p>
 <p>The POST request we will be using:</p>
 <p><div class="highlight"><pre><span></span><code>https://api.openai.com/v1/embeddings
@@ -902,7 +850,10 @@
 <div class="highlight"><pre><span></span><code><span class="err">Au</span><span class="kc">t</span><span class="err">horiza</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">Bearer</span><span class="w"> </span><span class="err">&lt;replace</span><span class="w"> </span><span class="err">wi</span><span class="kc">t</span><span class="err">h</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">ope</span><span class="kc">n</span><span class="err">Ai</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">key&gt;</span>
 <span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
 </code></pre></div>
-<p><span class="colour" style="color:red">Note: Ensure there is a space between "Bearer" and your OpenAI API key.</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure there is a space between "Bearer" and your OpenAI API key.</p>
+</div>
 <p><a class="glightbox" href="../assets/task4/pm2.png" data-type="image" data-width="100%" data-height="auto" data-title="postman2" data-desc-position="top"><img alt="postman2" src="../assets/task4/pm2.png" /></a></p>
 <p>In this lab, we will be using the <a href="https://platform.openai.com/docs/guides/embeddings/embedding-models">text-embedding-ada-002 model</a>, but feel free to use any other embedding model of your choice.</p>
 <p><a class="glightbox" href="../assets/task4/em1.png" data-type="image" data-width="100%" data-height="auto" data-title="Em2" data-desc-position="top"><img alt="Em2" src="../assets/task4/em1.png" /></a></p>
@@ -919,11 +870,18 @@
 <li>You will receive a 200 OK message, confirming success. You'll notice that our text has been converted into embeddings (vectors/floating point numbers). In the upcoming steps, we will learn how to manually save this information in a vector database.</li>
 </ul>
 <p><a class="glightbox" href="../assets/task4/pm4.png" data-type="image" data-width="100%" data-height="auto" data-title="postman4" data-desc-position="top"><img alt="postman4" src="../assets/task4/pm4.png" /></a></p>
-<p><span class="colour" style="color:red">Note:Text embedding models convert text into numerical data (embeddings) that represent the meaning of the text.</span></p>
-<h4 id="inserting-values-in-vector-database">Inserting values in Vector Database</h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Text embedding models convert text into numerical data (embeddings) that represent the meaning of the text.</p>
+</div>
+</div>
+<div class="tabbed-block">
 <p>We have a variety of databases available. In the upcoming step, let's demonstrate how to use <a href="https://www.singlestore.com/built-in-vector-database/" target="_blank">SingleStore</a> as a vector database and save our embeddings there.</p>
-<p><span class="colour" style="color:red">Note: This MANUAL step is simply to illustrate how embeddings are stored in vector databases.</span></p>
-<p><span class="colour" style="color:red">Note: We will create a Free account on <a href="https://www.singlestore.com/built-in-vector-database/" target="_blank">SingleStore</a> since it provides some credits to set up a trial account.</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This MANUAL step is simply to illustrate how embeddings are stored in vector databases.</p>
+<p>We will create a Free account on <a href="https://www.singlestore.com/built-in-vector-database/" target="_blank">SingleStore</a> since it provides some credits to set up a trial account.</span></p>
+</div>
 <p><a class="glightbox" href="../assets/task4/st1.png" data-type="image" data-width="100%" data-height="auto" data-title="SS1" data-desc-position="top"><img alt="SS1" src="../assets/task4/st1.png" /></a></p>
 <ul>
 <li>I’m choosing to create an account using Google, but feel free to use any other method that works for you.</li>
@@ -950,12 +908,18 @@
 <li>Then, leave everything as is and click on "Create Workspace."</li>
 </ul>
 <p><a class="glightbox" href="../assets/task4/st8.png" data-type="image" data-width="100%" data-height="auto" data-title="SS8" data-desc-position="top"><img alt="SS8" src="../assets/task4/st8.png" /></a></p>
-<p><span class="colour" style="color:red">Note: Workspace creation can take up to 5 minutes. </span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Workspace creation can take up to 5 minutes.</p>
+</div>
 <ul>
 <li>Now we can create a database</li>
 </ul>
 <p><a class="glightbox" href="../assets/task4/st9.png" data-type="image" data-width="100%" data-height="auto" data-title="SS9" data-desc-position="top"><img alt="SS9" src="../assets/task4/st9.png" /></a></p>
-<p><span class="colour" style="color:red">Note: Database creation can take up to 5 minutes. </span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Database creation can take up to 5 minutes.</p>
+</div>
 <p><a class="glightbox" href="../assets/task4/st11.png" data-type="image" data-width="100%" data-height="auto" data-title="SS11" data-desc-position="top"><img alt="SS11" src="../assets/task4/st11.png" /></a></p>
 <ul>
 <li>Click on Database tab</li>
@@ -972,7 +936,10 @@
 <ul>
 <li>Run this SQL command to create a table - Press Run</li>
 </ul>
-<p><span class="colour" style="color:red">Note: If your lab remains inactive for 20 minutes, the SingleStore database will automatically "pause" or go dormant. When this happens, you’ll need to return to the homepage, click “resume,” and the workspace will be ready again in a few minutes. </span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your lab remains inactive for 20 minutes, the SingleStore database will automatically "pause" or go dormant. When this happens, you’ll need to return to the homepage, click “resume,” and the workspace will be ready again in a few minutes.</p>
+</div>
 <p><div class="highlight"><pre><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">myvectortable</span><span class="w"> </span><span class="p">(</span>
 <span class="nb">text</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
 <span class="n">vector</span><span class="w"> </span><span class="nb">BLOB</span>
@@ -983,7 +950,10 @@
 <li>You can navigate to the Schema Explorer VIEW on the right, and verify that the table has been created.</li>
 </ul>
 <p><a class="glightbox" href="../assets/task4/st171.png" data-type="image" data-width="100%" data-height="auto" data-title="SS171" data-desc-position="top"><img alt="SS171" src="../assets/task4/st171.png" /></a></p>
-<p><span class="colour" style="color:red">Note: OR </span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>OR</p>
+</div>
 <ul>
 <li>You can navigate to the Databases tab and verify that the table has been created.</li>
 </ul>
@@ -1000,14 +970,20 @@
 <ul>
 <li>Let's head back to our SQL editor and insert the values into our database using the below SQL command. Once done press "Run"</li>
 </ul>
-<p><span class="colour" style="color:red">Note: You can reuse the same SQL editor block, remove the previous command, and run the following one. </span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You can reuse the same SQL editor block, remove the previous command, and run the following one.</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">myvectortable</span><span class="w"> </span><span class="p">(</span><span class="nb">text</span><span class="w"> </span><span class="p">,</span><span class="n">vector</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="ss">&quot;your_input_text&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">JSON_ARRAY_PACK</span><span class="p">(</span><span class="ss">&quot;your_embeddings&quot;</span><span class="p">))</span>
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>In this query:</p>
 <ul>
 <li><b style="color: red;">Replace "your_input_text" with the input values from Postman.</b></li>
 <li><b style="color: red;">Replace "your_embeddings" with the embeddings you copied earlier, including the square brackets [ ].</b></li>
 </ul>
+</div>
 <div class="highlight"><pre><span></span><code><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">myvectortable</span><span class="w"> </span><span class="p">(</span><span class="nb">text</span><span class="w"> </span><span class="p">,</span><span class="n">vector</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="ss">&quot;What is WebexOne 2024? WebexOne is an annual in-person and virtual event that takes place over four days. It’s an event focused on AI collaboration and customer experience, and it features a range of activities such as insightful breakout sessions, technical training courses, hands-on labs, inspiring keynotes, epic entertainment, a solutions showcase and expo, customer awards, meet the experts, 1:1 executive meetings, a partner program, and more!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">JSON_ARRAY_PACK</span><span class="p">(</span><span class="ss">&quot;[</span>
 <span class="ss">                -0.0042485874,</span>
 <span class="ss">                -0.02296605,</span>
@@ -1047,7 +1023,8 @@
 <ul>
 <li>Let's now explore on how to retrive values from Vector Database</li>
 </ul>
-<h4 id="retrieving-values-from-the-vector-database">Retrieving Values from the Vector Database</h4>
+</div>
+<div class="tabbed-block">
 <p><a class="glightbox" href="../assets/task4/st20.png" data-type="image" data-width="100%" data-height="auto" data-title="SS20" data-desc-position="top"><img alt="SS20" src="../assets/task4/st20.png" /></a></p>
 <ul>
 <li>Searching the vector database is quite simple. Example: we want to find information related to WebexOne. To do this, we'll create embeddings for our query, "Is WebexOne an annual event?" and then search the vector database to find matches against the existing embeddings.</li>
@@ -1057,23 +1034,32 @@
 <ul>
 <li>Let's open Postman and create an embedding for our question now. Be sure to click on "Send."</li>
 </ul>
-<p><b style="color: red;">Note: Make sure you use the same embedding techniques that we used earlier.</b></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure you use the same embedding techniques that we used earlier.</p>
+</div>
 <p><a class="glightbox" href="../assets/task4/st21.png" data-type="image" data-width="100%" data-height="auto" data-title="SS21" data-desc-position="top"><img alt="SS21" src="../assets/task4/st21.png" /></a></p>
 <ul>
 <li>Let's head over to the SQL editor and run a query for our search.</li>
 </ul>
 <p><a class="glightbox" href="../assets/task4/st2111.png" data-type="image" data-width="100%" data-height="auto" data-title="SS2111" data-desc-position="top"><img alt="SS2111" src="../assets/task4/st2111.png" /></a></p>
-<p><span class="colour" style="color:red">Note: You can reuse the same SQL editor block, remove the previous command, and run the following one. </span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can reuse the same SQL editor block, remove the previous command, and run the following one.</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="nb">text</span><span class="p">,</span><span class="n">dot_product</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span><span class="n">JSON_ARRAY_PACK</span><span class="p">(</span><span class="ss">&quot;your_embeddings&quot;</span><span class="p">))</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">score</span>
 <span class="k">from</span><span class="w"> </span><span class="n">myvectortable</span>
 <span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="k">desc</span>
 <span class="k">limit</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>In this query:</p>
 <ul>
 <li><b style="color: red;">Replace "your_embeddings" with the embeddings you copied earlier, including the square brackets [ ].</b></li>
 </ul>
 <p><span class="colour" style="color:red">Note: The below code is just an example, please copy the embeddings from your Postman. </span></p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="nb">text</span><span class="p">,</span><span class="n">dot_product</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span><span class="n">JSON_ARRAY_PACK</span><span class="p">(</span><span class="ss">&quot;[</span>
 <span class="ss">                -0.0015118581,</span>
 <span class="ss">                -0.021267666,</span>
@@ -1120,8 +1106,17 @@
 </code></pre></div>
 <p><a class="glightbox" href="../assets/task4/st22.png" data-type="image" data-width="100%" data-height="auto" data-title="SS22" data-desc-position="top"><img alt="SS22" src="../assets/task4/st22.png" /></a></p>
 <p><span class="colour" style="color:red">Note: You’ll be able to see the success of the vector database—higher scores indicate better matches for the answer.</span></p>
-<h2 id="conclusion">Conclusion</h2>
+</div>
+<div class="tabbed-block">
 <p>In summary, vector databases allow LLMs to have long-term memory. In this section, we explored how to use embeddings and vector databases by generating embeddings with the OpenAI API through Postman. After setting up a free SingleStore account, embeddings were stored in a vector database. The process included creating an embedding for a query, searching the database, and confirming that it effectively retrieved relevant information. This demonstrated how vector databases can efficiently manage and query embeddings, making it easier to find relevant information based on the data stored.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details>
+</details>
 
 
 
