@@ -513,17 +513,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Task 6  - Multimodal RAG
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -533,87 +522,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#set-openai-token-multimodal" class="md-nav__link">
-    Set OpenAI token - MultiModal
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-google-colab-envoirnment-and-install-packages" class="md-nav__link">
-    Update Google Colab envoirnment and install packages
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pdf-with-table" class="md-nav__link">
-    PDF with table
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lets-now-create-summary-from-our-data-by-passing-the-info-to-multimodal-model" class="md-nav__link">
-    Let's now create summary from our data by passing the info to Multimodal model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lets-now-create-our-multivector-retriever-and-rag-system-incl-storing-summary-embeddings-in-vector-db" class="md-nav__link">
-    Let's now create our MultiVector Retriever and RAG system - incl storing summary embeddings in Vector DB
-  </a>
-  
-    <nav class="md-nav" aria-label="Let's now create our MultiVector Retriever and RAG system - incl storing summary embeddings in Vector DB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-our-multivector-retriever" class="md-nav__link">
-    Create our MultiVector Retriever
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-our-rag-multimodal" class="md-nav__link">
-    Create our RAG (Multimodal)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lets-query-our-multimodal-retriever" class="md-nav__link">
-    Let's Query our Multimodal Retriever
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -884,7 +792,7 @@
 <div class="tabbed-block">
 <p>Whenever we develop applications based on Large Language Models (LLMs), handling data is a crucial aspect. As discussed in the previous section (RAG), data injection is the initial step in this process. It's important to note that there are typically three types of data structure.</p>
 <p><a class="glightbox" href="../assets/task6/6.png" data-type="image" data-width="100%" data-height="auto" data-title="C6" data-desc-position="top"><img alt="C6" src="../assets/task6/6.png" /></a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Task 1: Log into the Lab Environment</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:5"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><input id="__tabbed_4_5" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Task 1: Log into the Lab Environment</label><label for="__tabbed_4_2">Set OpenAI token - MultiModal</label><label for="__tabbed_4_3">Update Google Colab envoirnment and install packages</label><label for="__tabbed_4_4">PDF with table</label><label for="__tabbed_4_5">Create our MultiVector Retriever</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><a class="glightbox" href="../assets/task1/warn.png" data-type="image" data-width="100%" data-height="auto" data-title="Warn" data-desc-position="top"><img alt="Warn" src="../assets/task1/warn.png" /></a></p>
@@ -918,7 +826,8 @@
 <p>Click the play button to the left of the code, or use the keyboard shortcut "Command/Ctrl+Enter" while the cell is selected.</p>
 </div>
 <p><a class="glightbox" href="../assets/task8/exec.png" data-type="image" data-width="100%" data-height="auto" data-title="Colab_newcell_execute" data-desc-position="top"><img alt="Colab_newcell_execute" src="../assets/task8/exec.png" /></a></p>
-<h3 id="set-openai-token-multimodal">Set OpenAI token - MultiModal</h3>
+</div>
+<div class="tabbed-block">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>First, create an account from the <a href="https://platform.openai.com/">OpenAI official website</a>.If you have already completed this step please ignore and jump to Update Google Colab envoirnment section.</p>
@@ -944,15 +853,11 @@
 </ul>
 <p><a class="glightbox" href="../assets/task8c/kei.png" data-type="image" data-width="100%" data-height="auto" data-title="HF_GT_sec_created_8c" data-desc-position="top"><img alt="HF_GT_sec_created_8c" src="../assets/task8c/kei.png" /></a></p>
 </div>
+<div class="tabbed-block">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To avoid errors, overlap, or dependencies from previous tasks, open a new Google Colab notebook for this step. This will ensure a clean environment and prevent any potential issues related to previous work.</p>
 </div>
-</div>
-</div>
-</div>
-</div>
-</details>
-</details>
-<h3 id="update-google-colab-envoirnment-and-install-packages">Update Google Colab envoirnment and install packages</h3>
-<p><span class="colour" style="color:red"> NOTE: To avoid errors, overlap, or dependencies from previous tasks, open a new Google Colab notebook for this step. This will ensure a clean environment and prevent any potential issues related to previous work. </span></p>
 <p>PDFs often contain tables and other structured data that can be challenging to split accurately using character-based embedding techniques. For PDFs, it's important to extract and chunk all elements, including tables, effectively. We'll accomplish this using the <a href="https://unstructured.io/" target="_blank">Unstructured</a>, which is specifically designed for handling such tasks. If you have a large collection of PDFs, <a href="https://unstructured.io/" target="_blank">Unstructured</a> is an excellent tool to manage them efficiently.</p>
 <ul>
 <li>Install relevant libraries including <a href="https://unstructured.io/" target="_blank">Unstructured</a> . Unstructured will partition PDF files by first removing all embedded image blocks. Then it will use a layout model (YOLOX) to get bounding boxes (for tables) as well as titles.</li>
@@ -960,7 +865,10 @@
 <p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;unstructured[all-docs]&quot;</span> <span class="n">pillow</span> <span class="n">pydantic</span> <span class="n">lxml</span> <span class="n">matplotlib</span> <span class="n">langchain</span> <span class="n">langchain_community</span> <span class="n">chromadb</span> <span class="n">langchain</span><span class="o">-</span><span class="n">experimental</span> <span class="n">langchain_openai</span>
 </code></pre></div></td></tr></table></div>
 <a class="glightbox" href="../assets/task6/unstr.png" data-type="image" data-width="100%" data-height="auto" data-title="unstrc" data-desc-position="top"><img alt="unstrc" src="../assets/task6/unstr.png" /></a></p>
-<p><span class="colour" style="color:red">Note: Make sure to RESTART your notebook after installing the packages</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to RESTART your notebook after installing the packages</p>
+</div>
 <ul>
 <li>Since Google Colab is built on top of an Ubuntu environment, it's necessary to update the Google Colab environment to ensure we can effectively extract information from images or PDFs for analysis and processing.</li>
 </ul>
@@ -1007,11 +915,15 @@ nltk.download(&#39;averaged_perceptron_tagger&#39;)
 nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 </code></pre></div>
 <p><a class="glightbox" href="../assets/task6/ap14.png" data-type="image" data-width="100%" data-height="auto" data-title="ap14" data-desc-position="top"><img alt="ap14" src="../assets/task6/ap14.png" /></a></p>
-<h3 id="pdf-with-table">PDF with table</h3>
+</div>
+<div class="tabbed-block">
 <ul>
 <li>Let's load our PDF files into Google Colab. For this example, we can use the article titled "Webex Customer Experience Essentials" from the <a href="https://help.webex.com/en-us/article/72sb3r/Webex-Customer-Experience-Essentials">Webex Help Center</a>. You can  <a download="CX-Essentials.pdf" href="../assets/static/CX-Essentials.pdf" target="_blank">download the modified article here</a> as we will be using in the next step.</li>
 </ul>
-<p><span class="colour" style="color:red"> Note: To save time and speed up processing in this lab, I have modified the CX-Essentials.pdf file by reducing it to only a few pages. You can download this version from the modified link provided above. </span></p>
+<div class="admonition download">
+<p class="admonition-title">Download</p>
+<p>To save time and speed up processing in this lab, I have modified the CX-Essentials.pdf file by reducing it to only a few pages. You can download this version from the modified link provided above.</p>
+</div>
 <ul>
 <li>Within Google Colab, Click on Folder and create a new folder called "dat"</li>
 </ul>
@@ -1025,9 +937,12 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 </ul>
 <p><a class="glightbox" href="../assets/task6/8.png" data-type="image" data-width="100%" data-height="auto" data-title="r8" data-desc-position="top"><img alt="r8" src="../assets/task6/8.png" /></a></p>
 <ul>
-<li>Let's process our PDF document by splitting it into smaller, manageable chunks based on titles, extracting images, and handling text in a way that ensures the chunks are neither too large nor too small. We will store the extracted elements (text, images, etc.) in the pdf_elements variable, and images are saved in the specified path(image_path). To understand more about <a href="https://docs.unstructured.io/open-source/core-functionality/partitioning#partition-csv" target="_blank">unstructured partition_pdf, click here</a>. </li>
+<li>Let's process our PDF document by splitting it into smaller, manageable chunks based on titles, extracting images, and handling text in a way that ensures the chunks are neither too large nor too small. We will store the extracted elements (text, images, etc.) in the pdf_elements variable, and images are saved in the specified path(image_path). To understand more about <a href="https://docs.unstructured.io/open-source/core-functionality/partitioning#partition-csv" target="_blank">unstructured partition_pdf, click here</a>.</li>
 </ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <p>Unstructured will partition PDF files by first extracting embedded images if specified. It then processes the document's layout, dividing the content into structured elements such as titles, tables, and paragraphs based on the layout and text structure. For more detailed layout analysis, it may use advanced models like YOLOX to identify and extract bounding boxes for elements like tables and titles. This allows for the precise extraction and organization of text and images, making the content more suitable for further analysis and processing.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1053,7 +968,10 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p><a class="glightbox" href="../assets/task6/9.png" data-type="image" data-width="100%" data-height="auto" data-title="r9" data-desc-position="top"><img alt="r9" src="../assets/task6/9.png" /></a></p>
-<p><span class="colour" style="color:red"> Note: This process may take a few minutes to complete as we are extracting information from the PDF.</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This process may take a few minutes to complete as we are extracting information from the PDF.</p>
+</div>
 <ul>
 <li>You'll also notice that a folder has been created containing all the extracted images.</li>
 </ul>
@@ -1063,7 +981,10 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 </ul>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">pdf_elements</span>
 </code></pre></div></td></tr></table></div>
-<p><span class="colour" style="color:red">Note: Since we are working with a modified CX-Essentials.pdf file, you may notice that there are no pdf_elements for tables. </span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Since we are working with a modified CX-Essentials.pdf file, you may notice that there are no pdf_elements for tables.</p>
+</div>
 <p><a class="glightbox" href="../assets/task6/10.png" data-type="image" data-width="100%" data-height="auto" data-title="r10" data-desc-position="top"><img alt="r10" src="../assets/task6/10.png" /></a></p>
 <ul>
 <li>Let's categorize extracted elements from a PDF into two types: text elements and table elements. </li>
@@ -1101,12 +1022,20 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">texts</span>
 </code></pre></div></td></tr></table></div>
 <p><a class="glightbox" href="../assets/task6/text.png" data-type="image" data-width="100%" data-height="auto" data-title="texts" data-desc-position="top"><img alt="texts" src="../assets/task6/text.png" /></a></p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">tables</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">tables</span>
 </code></pre></div></td></tr></table></div>
-<span class="colour" style="color:red">Note: The output will be blank when running the table command.</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The output will be blank when running the table command.</p>
+</div>
 <p><a class="glightbox" href="../assets/task6/table.png" data-type="image" data-width="100%" data-height="auto" data-title="table" data-desc-position="top"><img alt="table" src="../assets/task6/table.png" /></a></p>
-<h3 id="lets-now-create-summary-from-our-data-by-passing-the-info-to-multimodal-model">Let's now create summary from our data by passing the info to Multimodal model</h3>
-<p><span class="colour" style="color:red">Note: We will be using GPT-4o as our Multimodal to create summary </span></p>
+<ul>
+<li>Let's now create summary from our data by passing the info to Multimodal model</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will be using GPT-4o as our Multimodal to create summary</p>
+</div>
 <ul>
 <li>Let's retrieve an OpenAI API key and set it as an environment variable within the Colab environment</li>
 </ul>
@@ -1346,12 +1275,18 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">image_summaries</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
-<p><span class="colour" style="color:red"> Note: This will generate a list of image summaries, each corresponding to an image in the figures directory. For example, if there are 11 images extracted from the PDF, you can access the summary for the 11th image by running: image_summaries[10] </span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This will generate a list of image summaries, each corresponding to an image in the figures directory. For example, if there are 11 images extracted from the PDF, you can access the summary for the 11th image by running: image_summaries[10]</p>
+</div>
 <p><a class="glightbox" href="../assets/task6/sum1.png" data-type="image" data-width="100%" data-height="auto" data-title="Sum1" data-desc-position="top"><img alt="Sum1" src="../assets/task6/sum1.png" /></a></p>
 <p><a class="glightbox" href="../assets/task6/sum2.png" data-type="image" data-width="100%" data-height="auto" data-title="Sum2" data-desc-position="top"><img alt="Sum2" src="../assets/task6/sum2.png" /></a></p>
-<h3 id="lets-now-create-our-multivector-retriever-and-rag-system-incl-storing-summary-embeddings-in-vector-db">Let's now create our MultiVector Retriever and RAG system - incl storing summary embeddings in Vector DB</h3>
+<ul>
+<li>Let's now create our MultiVector Retriever and RAG system - incl storing summary embeddings in Vector DB</li>
+</ul>
 <p><a class="glightbox" href="../assets/task6/sum3.png" data-type="image" data-width="100%" data-height="auto" data-title="Sum3" data-desc-position="top"><img alt="Sum3" src="../assets/task6/sum3.png" /></a></p>
-<h4 id="create-our-multivector-retriever">Create our MultiVector Retriever</h4>
+</div>
+<div class="tabbed-block">
 <ul>
 <li>Let's install packages for chroma, our in-memory db and MultiVectorRetriever</li>
 </ul>
@@ -1505,7 +1440,8 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">retriever_multi_vector_img</span>
 </code></pre></div></td></tr></table></div>
 <p><a class="glightbox" href="../assets/task6/sum31.png" data-type="image" data-width="100%" data-height="auto" data-title="Sum31" data-desc-position="top"><img alt="Sum31" src="../assets/task6/sum31.png" /></a></p>
-<h4 id="create-our-rag-multimodal">Create our RAG (Multimodal)</h4>
+<details>
+<summary>Create our RAG (Multimodal)</summary>
 <ul>
 <li>Let's create a multi_modal_rag_chain(retriever). This pipeline integrates both text and image data to enhance the quality of responses generated by an AI model</li>
 </ul>
@@ -1749,7 +1685,10 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 <span class="c1"># Create RAG chain</span>
 <span class="n">chain_multimodal_rag</span> <span class="o">=</span> <span class="n">multi_modal_rag_chain</span><span class="p">(</span><span class="n">retriever_multi_vector_img</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="lets-query-our-multimodal-retriever">Let's Query our Multimodal Retriever</h3>
+<div class="admonition challenge">
+<p class="admonition-title">Challenge</p>
+<p>Let's Query our Multimodal Retriever</p>
+</div>
 <ul>
 <li>Open your CX-Essentials.pdf, and let's try querying some information from it.</li>
 </ul>
@@ -1779,6 +1718,15 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 </code></pre></div></td></tr></table></div>
 * You'll notice that in our multimodal RAG system, I'm now able to retrieve images, tables, and text seamlessly.</p>
 <p><a class="glightbox" href="../assets/task6/yy.png" data-type="image" data-width="100%" data-height="auto" data-title="Sumaryyyy" data-desc-position="top"><img alt="Sumaryyyy" src="../assets/task6/yy.png" /></a></p>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details>
+</details>
 
 
 
