@@ -873,6 +873,10 @@
 <p><a class="glightbox" href="../assets/task3/char1.png" data-type="image" data-width="100%" data-height="auto" data-title="token_intro11" data-desc-position="top"><img alt="token_intro11" src="../assets/task3/char1.png" /></a></p>
 </div>
 <div class="tabbed-block">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To proceed, use the same Colab notebook you created earlier. Simply add a new code cell by clicking the '+ Code' button and paste the code below.</p>
+</div>
 <ul>
 <li>Let's retrieve the langchain library from the Python Package. In the example below, we'll configure the chunk_overlap parameter, which ensures that our chunks are blended together. Meaning the end of chunk 1 will overlap with the beginning of chunk 2. Please copy the below command in Colab and press <strong>run</strong> to execute each cell individually.</li>
 </ul>
@@ -887,13 +891,17 @@
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">langchain.text_splitter</span> <span class="kn">import</span> <span class="n">CharacterTextSplitter</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">langchain.text_splitter</span> <span class="kn">import</span> <span class="n">CharacterTextSplitter</span>
 
 <span class="n">text_splitter</span> <span class="o">=</span> <span class="n">CharacterTextSplitter</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">strip_whitespace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># seprate means you splt by charector</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">text_splitter</span><span class="o">.</span><span class="n">create_documents</span><span class="p">([</span><span class="n">text</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">a</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -921,6 +929,10 @@
 </ul>
 <p>With RTS, you don’t need to manually specify the chunk size by character count. You can simply pass your text to the RTS process, and it will intelligently determine how to split the text based on its structure, resulting in chunks that are logically organized and more contextually meaningful. In the example below, we provide a chunk size, but you can omit the chunk-size command if you prefer.</p>
 <p><a class="glightbox" href="../assets/task3/RTS.png" data-type="image" data-width="100%" data-height="auto" data-title="RTS" data-desc-position="top"><img alt="RTS" src="../assets/task3/RTS.png" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To proceed, use the same Colab notebook you created earlier. Simply add a new code cell by clicking the '+ Code' button and paste the code below.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Cisco hosts multiple events, including Cisco Live and WebexOne, which bring together industry professionals for in-person and virtual experiences. These events focus on AI collaboration, customer experience, and the latest innovations. They feature a variety of activities such as insightful breakout sessions, technical training courses, hands-on labs, inspiring keynotes, epic entertainment, a solutions showcase and expo, customer awards, meet-the-experts sessions, 1:1 executive meetings, a partner program, and more!&quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
