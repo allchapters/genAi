@@ -965,9 +965,13 @@
 <p>PDFs often contain tables and other structured data that can be challenging to split accurately using character-based methods. For PDFs, it's important to extract and chunk all elements, including tables, effectively. We'll accomplish this using the <a href="https://unstructured.io/" target="_blank">Unstructured library</a>, which is specifically designed for handling such tasks. If you have a large collection of PDFs, <a href="https://unstructured.io/" target="_blank">Unstructured</a> is an excellent tool to manage them efficiently.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There are multiple libraries available for handling PDF extraction, but in this lab guide, we will use the Unstructured library.</p>
+<p>There are multiple libraries available for handling PDF extraction, but in this lab guide, we will use the <a href="https://unstructured.io/" target="_blank">Unstructured</a> library.</p>
 </div>
 <p><a class="glightbox" href="../assets/task3/r11.png" data-type="image" data-width="100%" data-height="auto" data-title="r11" data-desc-position="top"><img alt="r11" src="../assets/task3/r11.png" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before proceeding, I highly recommend opening a new Colab notebook. Once done simply click the "+ Code" button to add a new code cell, then paste the code provided below. Also, ensure you’re connected to your runtime environment as outlined in the previous steps. Please remember to let each cell finish executing before moving on to the next one.</p>
+</div>
 <ul>
 <li>Install relevant libraries including <a href="https://unstructured.io/" target="_blank">Unstructured</a></li>
 </ul>
@@ -976,7 +980,7 @@
 <p><a class="glightbox" href="../assets/task3/unstr.png" data-type="image" data-width="100%" data-height="auto" data-title="unstrc" data-desc-position="top"><img alt="unstrc" src="../assets/task3/unstr.png" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You will be asked to restart your notebook</p>
+<p>You will be asked to restart your notebook. Click on Restart Session.</p>
 </div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">!</span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">poppler</span><span class="o">-</span><span class="n">utils</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">tesseract</span><span class="o">-</span><span class="n">ocr</span>
 </code></pre></div></td></tr></table></div>
@@ -1055,6 +1059,10 @@
 <p>If you run the command elements[37].metadata.text_as_html and the output is blank, search through the elements to locate where the first "table" field is defined. Look for the keyword unstructured.documents.elements.Table to identify which row contains your table data. As shown in the above image, the table element is located at unstructured.documents.elements.Table in a specific memory location. In this case, the table appears at row 37, but if the command does not work, manually check the positions where tables are stored. Keep in mind that indexing starts from 0, so row 37 refers to the 38th element in the list.</p>
 </div>
 <p><span class="colour" style="color:green">OUTPUT - Example</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can copy the below HTML snippet or use the actual HTML output you received from your element.</p>
+</div>
 <div class="highlight"><pre><span></span><code>&#39;<span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;&lt;</span><span class="nt">thead</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Revenue<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>$8.51 - $8.53 Billion<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>$34.5 - $34.7 Billion<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;/</span><span class="nt">thead</span><span class="p">&gt;&lt;</span><span class="nt">tbody</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Y/Y Growth<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>~10%<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>~10%<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>FX Impact)<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>no impact<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>no impact<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>GAAP Operating Margin<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>~11.4%<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Non-GAAP Operating Margin’)<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>~28.0%<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>GAAP Earnings per Share?)<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>$0.79 - $0.80<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>$2.67 - $2.69<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Non-GAAP Earnings per Share()<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>$1.89 - $1.90<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>$7.41 - $7.43<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Operating Cash Flow Growth (Y/Y)°)<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>16% - 17%<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Current Remaining Performance Obligation Growth (Y/Y)<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>~10%<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;/</span><span class="nt">tbody</span><span class="p">&gt;&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>&#39;
 </code></pre></div>
 <ul>
@@ -1068,6 +1076,10 @@
 </div>
 <div class="tabbed-block">
 <p>What if a PDF or other document contains images? How can you extract them? We'll use the Unstructured library again to handle this.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To proceed, use the same Colab notebook you created earlier. Simply add a new code cell by clicking the '+ Code' button and paste the code below.</p>
+</div>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Multi-Modal (Extract Images within PDF)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1139,22 +1151,22 @@
 <ul>
 <li>Set OpenAI token - MultiModal</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you've followed the lab instructions, the OpenAI API keys will be available in your demo Gmail account. If not, you can create an account and obtain the keys from the <a href="https://platform.openai.com/" target="_blank">OpenAI official website</a>.</p>
-</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you've followed the lab instructions, the OpenAI API keys will be available in your demo Gmail account. That we will be using. If not, you can create an account and obtain the keys from the <a href="https://platform.openai.com/" target="_blank">OpenAI official website</a>. The below info is for information purpose only</p>
 <ul>
 <li>Create a new project API key by browsing to <a href="https://platform.openai.com/api-keys" target="_blank">API Keys web page</a>. Select Create new secret key. The API key is automatically generated. Save the API Key as we will be using it in the later steps . The below API key is for reference only . Also when creating an API key run with default settings.</li>
 </ul>
 <p><a class="glightbox" href="../assets/task8c/ap1.png" data-type="image" data-width="100%" data-height="auto" data-title="GPT1_apiKey1" data-desc-position="top"><img alt="GPT1_apiKey1" src="../assets/task8c/ap1.png" /></a></p>
 <p><a class="glightbox" href="../assets/task8c/ap.png" data-type="image" data-width="100%" data-height="auto" data-title="GPT1_apiKey" data-desc-position="top"><img alt="GPT1_apiKey" src="../assets/task8c/ap.png" /></a></p>
+</div>
 <ul>
 <li>Within your existing Google Colab notebook navigate to the new “Secrets” section in the sidebar.</li>
 </ul>
 <p><a class="glightbox" href="../assets/task8a/gensec.png" data-type="image" data-width="100%" data-height="auto" data-title="HF_GT_sec" data-desc-position="top"><img alt="HF_GT_sec" src="../assets/task8a/gensec.png" /></a></p>
 <ul>
 <li>
-<p>Click on “Add a new secret.” Enter the name example: OPENAI_API_KEY and value of the secret(the API key created above). Note: The name is permanent once set. </p>
+<p>Click on “Add a new secret.” Enter the name example: OPENAI_API_KEY and value of the secret(the API key sent to the tmedemouserX account). Note: The name is permanent once set. </p>
 </li>
 <li>
 <p>The list of secrets is global across all your notebooks.</p>
@@ -1190,7 +1202,7 @@
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="kn">import</span> <span class="nn">base64</span>
 <span class="kn">import</span> <span class="nn">io</span>
-<span class="n">load_dotenv</span><span class="p">()</span>
+<span class="c1"># load_dotenv()</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
