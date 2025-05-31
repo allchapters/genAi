@@ -835,7 +835,7 @@
 <p>Select “Change runtime type”: This will open a dialog box where you can configure the runtime environment.</p>
 </li>
 <li>
-<p>Select Hardware Accelerator: From the “Hardware accelerator” dropdown menu, choose &gt;&gt; T4 GPU and enable toggle for High RAM</p>
+<p>Select Hardware Accelerator: From the “Hardware accelerator” dropdown menu, choose &gt;&gt; T4 GPU </p>
 </li>
 </ul>
 <p><a class="glightbox" href="../assets/task8a/savColab_chg_ram.png" data-type="image" data-width="100%" data-height="auto" data-title="Colab_savruntime" data-desc-position="top"><img alt="Colab_savruntime" src="../assets/task8a/savColab_chg_ram.png" /></a></p>
@@ -941,6 +941,9 @@ nltk.download(&#39;averaged_perceptron_tagger&#39;)
 nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 </code></pre></div>
 <p><a class="glightbox" href="../assets/task6/ap14.png" data-type="image" data-width="100%" data-height="auto" data-title="ap14" data-desc-position="top"><img alt="ap14" src="../assets/task6/ap14.png" /></a></p>
+<ul>
+<li>Let's load our data, by browsing to "PDF with table" tab</li>
+</ul>
 </div>
 <div class="tabbed-block">
 <ul>
@@ -1002,6 +1005,10 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 <li>You'll also notice that a folder has been created containing all the extracted images.</li>
 </ul>
 <p><a class="glightbox" href="../assets/task6/11.png" data-type="image" data-width="100%" data-height="auto" data-title="r11" data-desc-position="top"><img alt="r11" src="../assets/task6/11.png" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This images might differ in the lab</p>
+</div>
 <ul>
 <li>To see different elements from our pdf we can look into the variable</li>
 </ul>
@@ -1052,7 +1059,7 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The output will be blank when running the table command.</p>
+<p>The output will be blank when running the table command as the modified file doesnot have any tables.</p>
 </div>
 <p><a class="glightbox" href="../assets/task6/table.png" data-type="image" data-width="100%" data-height="auto" data-title="table" data-desc-position="top"><img alt="table" src="../assets/task6/table.png" /></a></p>
 <ul>
@@ -1075,7 +1082,7 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">userdata</span>
 <span class="n">OPENAI_API_TOKEN</span><span class="o">=</span><span class="n">userdata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;OPENAI_API_KEY&#39;</span><span class="p">)</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">OPENAI_API_TOKEN</span>
-<span class="n">load_dotenv</span><span class="p">()</span>
+<span class="c1"># load_dotenv()</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>Let's create a summary for our text element</li>
@@ -1308,13 +1315,13 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 <p><a class="glightbox" href="../assets/task6/sum1.png" data-type="image" data-width="100%" data-height="auto" data-title="Sum1" data-desc-position="top"><img alt="Sum1" src="../assets/task6/sum1.png" /></a></p>
 <p><a class="glightbox" href="../assets/task6/sum2.png" data-type="image" data-width="100%" data-height="auto" data-title="Sum2" data-desc-position="top"><img alt="Sum2" src="../assets/task6/sum2.png" /></a></p>
 <ul>
-<li>Let's now create our MultiVector Retriever and RAG system - incl storing summary embeddings in Vector DB</li>
+<li>Let's now create our MultiVector Retriever and RAG system - incl storing summary embeddings in Vector DB. Lets jump to "Create our MultiVector Retriever" tab</li>
 </ul>
 <p><a class="glightbox" href="../assets/task6/sum3.png" data-type="image" data-width="100%" data-height="auto" data-title="Sum3" data-desc-position="top"><img alt="Sum3" src="../assets/task6/sum3.png" /></a></p>
 </div>
 <div class="tabbed-block">
 <ul>
-<li>Let's install packages for chroma, our in-memory db and MultiVectorRetriever</li>
+<li>While on the same notebook, let's install packages for chroma, our in-memory db and MultiVectorRetriever</li>
 </ul>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1327,6 +1334,8 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 <span class="kn">from</span> <span class="nn">langchain_community.vectorstores</span> <span class="kn">import</span> <span class="n">Chroma</span>
 <span class="kn">from</span> <span class="nn">langchain_core.documents</span> <span class="kn">import</span> <span class="n">Document</span>
 <span class="kn">from</span> <span class="nn">langchain_openai</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">langchain</span><span class="o">-</span><span class="n">chroma</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>Let's create our function to build a multi-vector retriever. We will use OpenAI embeddings and create a Chroma vector store to index our summaries. This function will allow us to index summaries of texts, tables, and images, while retrieving the raw data (texts, tables, or images) based on those summaries. By leveraging the OpenAI embeddings, our Chroma vector store will effectively handle and retrieve multimodal content.</li>
@@ -1396,13 +1405,15 @@ nltk.download(&#39;averaged_perceptron_tagger_eng&#39;)
 <span class="normal">63</span>
 <span class="normal">64</span>
 <span class="normal">65</span>
-<span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">uuid</span>
+<span class="normal">66</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">uuid</span>
 
 <span class="kn">from</span> <span class="nn">langchain.embeddings</span> <span class="kn">import</span> <span class="n">VertexAIEmbeddings</span>
 <span class="kn">from</span> <span class="nn">langchain.retrievers.multi_vector</span> <span class="kn">import</span> <span class="n">MultiVectorRetriever</span>
 <span class="kn">from</span> <span class="nn">langchain.schema.document</span> <span class="kn">import</span> <span class="n">Document</span>
 <span class="kn">from</span> <span class="nn">langchain.storage</span> <span class="kn">import</span> <span class="n">InMemoryStore</span>
-<span class="kn">from</span> <span class="nn">langchain.vectorstores</span> <span class="kn">import</span> <span class="n">Chroma</span>
+<span class="c1"># from langchain.vectorstores import Chroma</span>
+<span class="kn">from</span> <span class="nn">langchain_chroma</span> <span class="kn">import</span> <span class="n">Chroma</span>
 
 
 <span class="k">def</span> <span class="nf">create_multi_vector_retriever</span><span class="p">(</span>
