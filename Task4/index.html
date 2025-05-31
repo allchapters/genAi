@@ -840,8 +840,8 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="4:5"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><input id="__tabbed_4_5" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Set OpenAI token</label><label for="__tabbed_4_2">Login to Postman</label><label for="__tabbed_4_3">Inserting values in Vector Database</label><label for="__tabbed_4_4">Retrieving Values from the Vector Database</label><label for="__tabbed_4_5">Conclusion</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <p>If you’ve already obtained the token in previous steps or section, you can skip this section</p>
 </div>
 <ul>
@@ -883,11 +883,15 @@
 <p><a class="glightbox" href="../assets/task4/pm2.png" data-type="image" data-width="100%" data-height="auto" data-title="postman2" data-desc-position="top"><img alt="postman2" src="../assets/task4/pm2.png" /></a></p>
 <p>In this lab, we will be using the <a href="https://platform.openai.com/docs/guides/embeddings/embedding-models">text-embedding-ada-002 model</a>, but feel free to use any other embedding model of your choice.</p>
 <p><a class="glightbox" href="../assets/task4/em1.png" data-type="image" data-width="100%" data-height="auto" data-title="Em2" data-desc-position="top"><img alt="Em2" src="../assets/task4/em1.png" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the input field below, you can also enter your own text if you prefer.</p>
+</div>
 <ul>
 <li>In Postman, click on the "Body" tab, select <strong>RAW</strong> and enter the following information, and then press <strong>Send</strong>.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;What is WebexOne 2024? WebexOne is an annual in-person and virtual event that takes place over four days. It’s an event focused on AI collaboration and customer experience, and it features a range of activities such as insightful breakout sessions, technical training courses, hands-on labs, inspiring keynotes, epic entertainment, a solutions showcase and expo, customer awards, meet the experts, 1:1 executive meetings, a partner program, and more! &quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;What is WebexOne 2024? WebexOne is an annual in-person and virtual event that takes place over four days. It’s an event focused on AI collaboration and customer experience, and it features a range of activities such as insightful breakout sessions, technical training courses, hands-on labs, inspiring keynotes, epic entertainment, a solutions showcase and expo, customer awards, meet the experts, 1:1 executive meetings, a partner program, and more!&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text-embedding-ada-002&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -948,7 +952,7 @@
 </div>
 <p><a class="glightbox" href="../assets/task4/st11.png" data-type="image" data-width="100%" data-height="auto" data-title="SS11" data-desc-position="top"><img alt="SS11" src="../assets/task4/st11.png" /></a></p>
 <ul>
-<li>Click on Database tab</li>
+<li>Click on Database tab and click on the databse name you created earlier.</li>
 </ul>
 <p><a class="glightbox" href="../assets/task4/st13.png" data-type="image" data-width="100%" data-height="auto" data-title="SS13" data-desc-position="top"><img alt="SS13" src="../assets/task4/st13.png" /></a></p>
 <ul>
@@ -981,7 +985,7 @@
 <p>OR</p>
 </div>
 <ul>
-<li>You can navigate to the Databases tab and verify that the table has been created.</li>
+<li>Navigate to the Deployments tab, click on Databases, select your database, and verify that the table has been created.</li>
 </ul>
 <p><a class="glightbox" href="../assets/task4/st17.png" data-type="image" data-width="100%" data-height="auto" data-title="SS17" data-desc-position="top"><img alt="SS17" src="../assets/task4/st17.png" /></a></p>
 <ul>
