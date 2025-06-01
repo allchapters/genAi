@@ -889,6 +889,10 @@ Furthermore, I'll show you how to utilize Streamlit, a server-based application,
 <ul>
 <li>Copy your Langchain Key and save it </li>
 </ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You can also use the key that was sent to your tmedemouserX account at the start of the lab.</p>
+</div>
 <p><a class="glightbox" href="../assets/task9/keyls.png" data-type="image" data-width="100%" data-height="auto" data-title="key" data-desc-position="top"><img alt="key" src="../assets/task9/keyls.png" /></a></p>
 <p><a class="glightbox" href="../assets/task9/keyls1.png" data-type="image" data-width="100%" data-height="auto" data-title="key1" data-desc-position="top"><img alt="key1" src="../assets/task9/keyls1.png" /></a></p>
 <ul>
@@ -898,6 +902,10 @@ Furthermore, I'll show you how to utilize Streamlit, a server-based application,
 <p><a class="glightbox" href="../assets/task9/key11.png" data-type="image" data-width="100%" data-height="auto" data-title="key11" data-desc-position="top"><img alt="key11" src="../assets/task9/key11.png" /></a></p>
 </div>
 <div class="tabbed-block">
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You can also use the NGROK key that was sent to your tmedemouserX account at the start of the lab.</p>
+</div>
 <ul>
 <li>
 <p>Browse to <a href="https://ngrok.com/" target="_blank">NGROK</a> and click on Login. Ngrok is a reverse proxy application allowing cloud-based applications send notifications to your application which are running behind a firewall</p>
@@ -968,7 +976,7 @@ Furthermore, I'll show you how to utilize Streamlit, a server-based application,
 </code></pre></div></td></tr></table></div>
 <details class="important">
 <summary>Important</summary>
-<p><span class="colour" style="color:red"> Note: Due to the challenges of running Streamlit directly on Google Colab, we'll use NGROK to enable the execution and access of our code via a web interface. The code below is for your <b>understanding only</b> or if you're running it as Python packages in your own environment. To continue and run the code in this lab or on Google Colab, please proceed and copy the code from <a href="https://allchapters.github.io/Ai/Task9/#configuration1">Configuration1 section</a>. </span></p>
+<p><span class="colour" style="color:red"> Note: Due to the challenges of running Streamlit directly on Google Colab, we'll use NGROK to enable the execution and access of our code via a web interface. The code below is for your <b>understanding only</b> or if you're running it as Python packages in your own environment. To continue and run the code in this lab or on Google Colab, please proceed and copy the code from <b>Configuration1 section </b> </span></p>
 <ul>
 <li>(Optional Step for your understanding) As we creating a simple chatbot application lets create our prompt </li>
 </ul>
@@ -1026,6 +1034,10 @@ Furthermore, I'll show you how to utilize Streamlit, a server-based application,
 <p>The code will start by creating a Streamlit application using a prompt template, a language model (LLM), and an output parser. These components are combined into a chain to process user input and generate responses using  GPT-4o model. The app will prompt the user to input a query and then processes it through the chain, displaying the generated response in the Streamlit interface. We will save Streamlit app code to a file (app.py), and a subprocess is started to run the app.</p>
 </li>
 </ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Be sure to add your ngrok token before running the cell. Please enter your NGROK token in cell 43.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1132,11 +1144,16 @@ Furthermore, I'll show you how to utilize Streamlit, a server-based application,
 <ul>
 <li>Since we're using <a href="https://smith.langchain.com/" target="_blank">Langserve for llm-ops</a>, let's log in and explore its features there.</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to log in using the same Gmail account(tmedemouserX) you used to sign in and create the API keys, as mentioned in Task 1.</p>
+</div>
 <p><a class="glightbox" href="../assets/task9/ss3.png" data-type="image" data-width="100%" data-height="auto" data-title="ss3" data-desc-position="top"><img alt="ss3" src="../assets/task9/ss3.png" /></a></p>
 <p><a class="glightbox" href="../assets/task9/ss4.png" data-type="image" data-width="100%" data-height="auto" data-title="ss4" data-desc-position="top"><img alt="ss4" src="../assets/task9/ss4.png" /></a></p>
 <p><a class="glightbox" href="../assets/task9/ss6.png" data-type="image" data-width="100%" data-height="auto" data-title="ss6" data-desc-position="top"><img alt="ss6" src="../assets/task9/ss6.png" /></a></p>
 <p>This dashboard provides a summary of the performance, usage, and cost metrics for the "default" project within the last 7 days. It offers insights into how frequently the project has been run, the efficiency (in terms of error rates and latency), and the associated costs, helping users to monitor and optimize their LLM (Large Language Model) operations. By leveraging LangSmith’s observability tools, users can gain deeper insights into model behavior, fine-tune prompts, and improve overall system performance.</p>
-<p><b> Enhancing Our Streamlit App to Send Messages to a Webex Space </b></p>
+<p><div style="background-color:#fff3cd; padding:10px; border-left:6px solid #ffc107; font-weight:bold; font-size:18px; color:black;">
+🚀 Enhancing Our Streamlit App to Send Messages to a Webex Space </div></p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Streamlit is an open-source Python library that makes it easy to create interactive, data-driven web applications. It allows users to build web apps for machine learning, data visualization, and data science projects without needing extensive web development knowledge. With Streamlit, you can quickly turn your Python scripts into interactive web interfaces by adding widgets like sliders, buttons, and charts, all using just Python code. It's an efficient way to visualize and share data insights in real time.</span></p>
@@ -1181,9 +1198,31 @@ Furthermore, I'll show you how to utilize Streamlit, a server-based application,
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LANGCHAIN_ENDPOINT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://api.smith.langchain.com&quot;</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LANGCHAIN_PROJECT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
 </code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">langchain_openai</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
+<span class="kn">from</span> <span class="nn">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
+<span class="kn">from</span> <span class="nn">langchain_core.output_parsers</span> <span class="kn">import</span> <span class="n">StrOutputParser</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">userdata</span>
+<span class="kn">from</span> <span class="nn">pyngrok</span> <span class="kn">import</span> <span class="n">ngrok</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">os</span>
+</code></pre></div></td></tr></table></div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Be sure to add your webex_space_id and Bearer token in cells 18 and 19 before running the code.</p>
+<p>Before running the code, make sure to enter your webex_space_id and Bearer token in cells 18 and 19. Also, add your NGROK token in cell 71.</p>
 </div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1333,7 +1372,7 @@ Furthermore, I'll show you how to utilize Streamlit, a server-based application,
 </code></pre></div></td></tr></table></div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Be sure to add your ngrok token before running the cell. Please enter your NGROK token in cell 71. </p>
+<p>Before running the code, make sure to enter your webex_space_id and Bearer token in cells 18 and 19. Also, add your NGROK token in cell 71.</p>
 </div>
 <p><a class="glightbox" href="../assets/task9/ss7.png" data-type="image" data-width="100%" data-height="auto" data-title="ss7" data-desc-position="top"><img alt="ss7" src="../assets/task9/ss7.png" /></a></p>
 <p><a class="glightbox" href="../assets/task9/ss8.png" data-type="image" data-width="100%" data-height="auto" data-title="ss8" data-desc-position="top"><img alt="ss8" src="../assets/task9/ss8.png" /></a></p>
@@ -1341,8 +1380,8 @@ Furthermore, I'll show you how to utilize Streamlit, a server-based application,
 <p><a class="glightbox" href="../assets/task9/ss918.png" data-type="image" data-width="100%" data-height="auto" data-title="ss918" data-desc-position="top"><img alt="ss918" src="../assets/task9/ss918.png" /></a></p>
 <details class="note">
 <summary>Note</summary>
-<p>Building using Ollama Models(opensource) - OPTIONAL </p>
-<p><span class="colour" style="color:red"> Note: The code below will work if you are running Ollama locally on your machine as explained in <a href="../Task1/">Task1</a></span></p>
+<p>Building using Ollama Models(opensource) - OPTIONAL Source Code - For Informational Purpose Only</p>
+<p><span class="colour" style="color:red"> Note: The code below will work only if you are running Ollama locally on your machine as explained in <a href="../Task1/">Task1</a></span></p>
 <p>In this example, we're leveraging LangChain to build an AI assistant using the LLama3 model, accessible through the Ollama API. The assistant is designed to help with queries and is implemented using Streamlit, which provides a user-friendly interface as shown above. </p>
 <p><span class="colour" style="color:red">Note:</span> Make sure you are running Ollama locally on your machine, as explained in <a href="../Task1/">Task1</a>, to ensure the Llama3 model is properly accessible.</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Optional Code</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
