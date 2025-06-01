@@ -1611,6 +1611,10 @@ Furthermore, I'll show you how to utilize Streamlit, a server-based application,
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><pre><span></span><code>response[&#39;answer&#39;]
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Let's jump into <a href="https://smith.langchain.com/" target="_blank">LangSmith</a> to review the logs.</p>
+</div>
 <p><a class="glightbox" href="../assets/task9/ss17.png" data-type="image" data-width="100%" data-height="auto" data-title="ss17" data-desc-position="top"><img alt="ss17" src="../assets/task9/ss17.png" /></a></p>
 <p><a class="glightbox" href="../assets/task9/ss177.png" data-type="image" data-width="100%" data-height="auto" data-title="ss177" data-desc-position="top"><img alt="ss177" src="../assets/task9/ss177.png" /></a></p>
 <p><b>Summary</b></p>
@@ -1619,7 +1623,7 @@ Furthermore, I'll show you how to utilize Streamlit, a server-based application,
 </div>
 <div class="tabbed-block">
 <p><b>Advanced Rag - Multisearch Agents RAG application </b></p>
-<p>If you recall in our previous usecase, we discussed chains where we manually defined the sequence of actions to execute. However, the core concept behind <a href="https://python.langchain.com/v0.1/docs/modules/agents/">agents</a> is different. Instead of hardcoding the sequence of actions (as we do in chains), agents leverage a language model as a reasoning engine. This allows the model/agents to dynamically decide which actions to take and in what order.</p>
+<p>If you recall in our previous use case, we discussed chains where we manually defined the sequence of actions to execute. However, the core concept behind <a href="https://python.langchain.com/v0.1/docs/modules/agents/" target="_blank">agents</a> is different. Instead of hardcoding the sequence of actions (as we do in chains), agents leverage a language model as a reasoning engine. This allows the model/agents to dynamically decide which actions to take and in what order.</p>
 <p>In this context, <a href="https://python.langchain.com/v0.1/docs/modules/tools/" target="_blank">tools</a> play an essential role. Tools are like wrappers that the model can call upon to perform specific tasks, acting as interfaces between the agent and the outside world. By integrating tools with agents, the language model not only decides what action to take but also knows how to use the available tools to achieve the desired outcome. This flexible system allows agents to interact with different data sources or APIs dynamically, without the need for a fixed sequence of operations as seen in chains.</p>
 <p><b>Lab Configuration</b></p>
 <div class="admonition note">
@@ -1833,6 +1837,24 @@ Furthermore, I'll show you how to utilize Streamlit, a server-based application,
 <span class="n">prompt</span> <span class="o">=</span> <span class="n">hub</span><span class="o">.</span><span class="n">pull</span><span class="p">(</span><span class="s2">&quot;hwchase17/openai-functions-agent&quot;</span><span class="p">)</span>
 <span class="n">prompt</span><span class="o">.</span><span class="n">messages</span>
 </code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><b>Optional/Information Only: </b> You can also use custom templates as shown
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span><span class="p">,</span> <span class="n">SystemMessagePromptTemplate</span><span class="p">,</span> <span class="n">HumanMessagePromptTemplate</span><span class="p">,</span> <span class="n">MessagesPlaceholder</span>
+<span class="c1"># Custom prompt template</span>
+<span class="n">custom_prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">([</span>
+    <span class="n">SystemMessagePromptTemplate</span><span class="o">.</span><span class="n">from_template</span><span class="p">(</span>
+        <span class="s2">&quot;You are a helpful assistant. If you can&#39;t find the information using the tools, please say so and apologize to the user.&quot;</span>
+    <span class="p">),</span>
+    <span class="n">MessagesPlaceholder</span><span class="p">(</span><span class="n">variable_name</span><span class="o">=</span><span class="s2">&quot;chat_history&quot;</span><span class="p">,</span> <span class="n">optional</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">HumanMessagePromptTemplate</span><span class="o">.</span><span class="n">from_template</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{input}</span><span class="s2">&quot;</span><span class="p">),</span>
+    <span class="n">MessagesPlaceholder</span><span class="p">(</span><span class="n">variable_name</span><span class="o">=</span><span class="s2">&quot;agent_scratchpad&quot;</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="c1"># View structure</span>
+<span class="n">custom_prompt</span><span class="o">.</span><span class="n">messages</span>
+</code></pre></div></p>
+</div>
 <ul>
 <li>As we are creating an agent that can interact with multiple tools by leveraging the OpenAI language model. The create_openai_tools_agent function combines the LLM, tools, and a prompt to form an agent. This agent will use the LLM as a reasoning engine to dynamically decide which tool to use based on the input query. It allows us to query Wikipedia, custom retrieval tools, Arxiv, and more, all within one unified system.</li>
 </ul>
