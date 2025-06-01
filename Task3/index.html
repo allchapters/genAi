@@ -868,7 +868,7 @@
 <p><a class="glightbox" href="../assets/task3/char.png" data-type="image" data-width="100%" data-height="auto" data-title="token_intro1" data-desc-position="top"><img alt="token_intro1" src="../assets/task3/char.png" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Please note that the image above is not generated directly from our code. It has been included as a visual aid to help you better understand the concept of tokenization and chunking.  The text contained a total of 522 characters, divided into 15 chunks. Problem with the above chunking technique is that it got split at 'includ'. How we know when to chunk . Before we look into that. Lets look into Langchain Splitter.</p>
+<p>Please note that the image above is not generated directly from our code. It has been included as a visual aid to help you better understand the concept of tokenization and chunking.  The text contained a total of 522 characters, divided into 15 chunks. Problem with the above chunking technique is that it got split at 'includ'. How do we know when to chunk? Before we look into that. Lets look into Langchain Splitter.</p>
 </div>
 <p><a class="glightbox" href="../assets/task3/char1.png" data-type="image" data-width="100%" data-height="auto" data-title="token_intro11" data-desc-position="top"><img alt="token_intro11" src="../assets/task3/char1.png" /></a></p>
 </div>
@@ -895,7 +895,7 @@
 <span class="normal">8</span>
 <span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">langchain.text_splitter</span> <span class="kn">import</span> <span class="n">CharacterTextSplitter</span>
 
-<span class="n">text_splitter</span> <span class="o">=</span> <span class="n">CharacterTextSplitter</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">strip_whitespace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># seprate means you splt by charector</span>
+<span class="n">text_splitter</span> <span class="o">=</span> <span class="n">CharacterTextSplitter</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">strip_whitespace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># seprate means you split by character</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">text_splitter</span><span class="o">.</span><span class="n">create_documents</span><span class="p">([</span><span class="n">text</span><span class="p">])</span>
 
@@ -1071,7 +1071,7 @@
 <p><a class="glightbox" href="../assets/task3/tab.png" data-type="image" data-width="100%" data-height="auto" data-title="Table1" data-desc-position="top"><img alt="Table1" src="../assets/task3/tab.png" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>That's how you handle tables within a PDF.</p>
+<p>That's how you handle tables within a PDF. Please note that the image above may appear slightly different.</p>
 </div>
 </div>
 <div class="tabbed-block">
